@@ -1,0 +1,59 @@
+.navbar {
+    background-color: #f9ca24;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .navbar a {
+    color: #c0392b;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  /* Стили для навигационного меню */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  background-color: #fff8e1;
+  padding: 10px 20px;
+  border-radius: 12px;
+  margin: 20px auto;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+/* Стили для каждой ссылки */
+.navbar a {
+  text-decoration: none;
+  color: #d32f2f;
+  font-weight: bold;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease; /* Плавная смена цвета текста */
+}
+
+/* При наведении: меняем цвет и добавляем подчёркивание */
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #d32f2f;
+  transition: width 0.3s ease; /* Плавное появление полоски */
+}
+
+.navbar a:hover {
+  color: #b71c1c;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
