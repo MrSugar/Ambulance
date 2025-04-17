@@ -15,7 +15,7 @@ import Contacts from "./pages/Contacts";
 
 // 🧩 Импорт компонентов интерфейса
 import Header from "./components/header";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 import "./App.css"; // 🎨 Общие стили
