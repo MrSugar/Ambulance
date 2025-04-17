@@ -1,18 +1,22 @@
+/* Центрирование текста в основном контейнере */
 .App {
   text-align: center;
 }
 
+/* Логотип — задаём высоту и отключаем события мыши */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
+/* Анимация вращения логотипа, если не включён режим минимальной анимации */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+/* Стили шапки приложения */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,10 +28,12 @@
   color: white;
 }
 
+/* Ссылка внутри приложения */
 .App-link {
   color: #61dafb;
 }
 
+/* Анимация вращения логотипа */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,6 +42,8 @@
     transform: rotate(360deg);
   }
 }
+
+/* Базовые стили для body */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -43,6 +51,7 @@ body {
   color: #333;
 }
 
+/* Навигационное меню */
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -51,6 +60,7 @@ nav {
   border-bottom: 3px solid #d32f2f;
 }
 
+/* Стили ссылок в навигации */
 nav a {
   text-decoration: none;
   color: #000;
@@ -59,14 +69,17 @@ nav a {
   transition: background 0.3s;
 }
 
+/* Эффект при наведении на ссылку */
 nav a:hover {
   background-color: #ffe082;
 }
 
+/* Цвет заголовков второго уровня */
 h2 {
   color: #d32f2f;
 }
 
+/* Адаптивная навигация на маленьких экранах */
 @media (max-width: 600px) {
   nav a {
     flex: 1 0 100%;
@@ -74,6 +87,8 @@ h2 {
     border-top: 1px solid #fdd835;
   }
 }
+
+/* Стили для хедера сайта */
 .header {
   text-align: center;
   background-color: #ffeb3b;
@@ -81,18 +96,21 @@ h2 {
   border-bottom: 4px solid #d32f2f;
 }
 
+/* Заголовок сайта */
 .site-title {
   margin: 0;
   font-size: 32px;
   color: #d32f2f;
 }
 
+/* Подзаголовок сайта */
 .site-subtitle {
   margin: 5px 0 0;
   font-size: 16px;
   color: #555;
 }
 
+/* Альтернативная навигация */
 .navbar {
   display: flex;
   flex-wrap: wrap;
@@ -100,6 +118,7 @@ h2 {
   background-color: #ffcc00;
 }
 
+/* Ссылки в navbar */
 .navbar a {
   text-decoration: none;
   color: #000;
@@ -112,10 +131,12 @@ h2 {
   background-color: #ffe082;
 }
 
+/* Основной контент */
 .main {
   padding: 20px;
 }
 
+/* Адаптивная навигация и шрифты для телефонов */
 @media (max-width: 600px) {
   .navbar a {
     flex: 1 0 100%;
@@ -131,8 +152,8 @@ h2 {
     font-size: 14px;
   }
 }
-/*phone*/
 
+/* Версия для телефона (дополнительные стили) */
 body {
   font-family: sans-serif;
   margin: 0;
@@ -141,12 +162,14 @@ body {
   color: #333;
 }
 
+/* Шапка на телефоне */
 header {
   background-color: #ffcc00;
   color: #000;
   padding: 20px;
 }
 
+/* Ссылки в навигации */
 nav a {
   margin: 0 10px;
   text-decoration: none;
@@ -158,6 +181,7 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* Адаптация навигации и заголовков на планшетах и телефонах */
 @media (max-width: 768px) {
   nav {
     display: flex;
@@ -173,44 +197,47 @@ nav a:hover {
     font-size: 1.5em;
   }
 }
-/* Убираем стандартные отступы и задаём базовый шрифт для всего сайта */
+
+/* Сброс отступов и градиентный фон */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(to bottom right, #ffe259, #ffa751); /* Градиентный фон */
-  color: #222; /* Тёмный текст */
+  color: #222;
 }
 
-/* Контейнер, который оборачивает всё приложение */
+/* Контейнер всего сайта */
 .container {
   display: flex;
-  flex-direction: column; /* Располагаем элементы вертикально */
-  min-height: 100vh; /* Минимальная высота — весь экран */
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Основной контент между шапкой и футером */
 .main {
-  flex: 1; /* Занимает всё свободное пространство между шапкой и футером */
+  flex: 1;
   padding: 20px;
-  background-color: #fff; /* Белый фон у блока */
-  border-radius: 16px; /* Скруглённые углы */
+  background-color: #fff;
+  border-radius: 16px;
   margin: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Мягкая тень */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
+
+/* Контент страницы с анимацией */
 .page-content {
   padding: 2rem;
   animation-timing-function: ease-out;
 }
 
-/* Общие стили для всего сайта */
+/* Повторное определение общих стилей body */
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif; /* Используем Roboto в качестве основного шрифта */
+  font-family: 'Roboto', sans-serif;
   background: linear-gradient(to bottom right, #ffe259, #ffa751);
   color: #222;
 }
 
-/* Для заголовков можно использовать Montserrat */
+/* Шрифт заголовка */
 .site-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
