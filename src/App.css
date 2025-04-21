@@ -1,125 +1,83 @@
-/* Центрирование текста в основном контейнере */
-.App {
-  text-align: center;
+/* 🎨 CSS-переменные (цветовая палитра) */
+:root {
+  --primary-color: #ffcc00;     /* Основной цвет — ярко-жёлтый */
+  --accent-color: #d32f2f;      /* Акцент — тёмно-красный */
+  --hover-color: #ffe082;       /* Цвет при наведении */
+  --light-bg: #fff8e1;          /* Светлый фон */
+  --dark-text: #1a1a1a;         /* Тёмный текст */
+  --font-main: 'Rubik', sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
 }
 
-/* Логотип — задаём высоту и отключаем события мыши */
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-/* Анимация вращения логотипа, если не включён режим минимальной анимации */
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-/* Стили шапки приложения */
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-/* Ссылка внутри приложения */
-.App-link {
-  color: #61dafb;
-}
-
-/* Анимация вращения логотипа */
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Базовые стили для body */
+/* 🔲 Базовые стили для body */
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fff8e1;
-  color: #333;
+  padding: 0;
+  font-family: var(--font-main);
+  background: linear-gradient(to bottom right, #ffe259, #ffa751); /* Градиентный фон */
+  color: var(--dark-text);
 }
 
-/* Навигационное меню */
-nav {
+/* 🧱 Контейнер сайта */
+.container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: #ffcc00;
-  border-bottom: 3px solid #d32f2f;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Стили ссылок в навигации */
-nav a {
-  text-decoration: none;
-  color: #000;
-  padding: 10px 15px;
-  font-weight: bold;
-  transition: background 0.3s;
+/* 📄 Основной контент между шапкой и футером */
+.main {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 16px;
+  margin: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Эффект при наведении на ссылку */
-nav a:hover {
-  background-color: #ffe082;
+/* 🔝 Адаптация контента с анимацией */
+.page-content {
+  padding: 2rem;
+  animation-timing-function: ease-out;
 }
 
-/* Цвет заголовков второго уровня */
-h2 {
-  color: #d32f2f;
-}
-
-/* Адаптивная навигация на маленьких экранах */
-@media (max-width: 600px) {
-  nav a {
-    flex: 1 0 100%;
-    text-align: center;
-    border-top: 1px solid #fdd835;
-  }
-}
-
-/* Стили для хедера сайта */
+/* 🧠 Шапка */
 .header {
   text-align: center;
-  background-color: #ffeb3b;
+  background-color: var(--primary-color);
   padding: 20px 10px;
-  border-bottom: 4px solid #d32f2f;
+  border-bottom: 4px solid var(--accent-color);
 }
 
-/* Заголовок сайта */
+/* 🔤 Заголовок сайта */
 .site-title {
   margin: 0;
-  font-size: 32px;
-  color: #d32f2f;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 2.5em;
+  color: var(--accent-color);
 }
 
-/* Подзаголовок сайта */
+/* 🔠 Подзаголовок сайта */
 .site-subtitle {
   margin: 5px 0 0;
   font-size: 16px;
   color: #555;
 }
 
-/* Альтернативная навигация */
-.navbar {
+/* 🧭 Навигационное меню */
+.navbar,
+nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: #ffcc00;
+  background-color: var(--primary-color);
+  border-bottom: 3px solid var(--accent-color);
 }
 
-/* Ссылки в navbar */
-.navbar a {
+/* 🔗 Ссылки в навигации */
+.navbar a,
+nav a {
   text-decoration: none;
   color: #000;
   padding: 12px 18px;
@@ -127,21 +85,31 @@ h2 {
   transition: background 0.3s;
 }
 
-.navbar a:hover {
-  background-color: #ffe082;
+.navbar a:hover,
+nav a:hover {
+  background-color: var(--hover-color);
 }
 
-/* Основной контент */
-.main {
-  padding: 20px;
+/* 📢 Цвет заголовков второго уровня */
+h2 {
+  color: var(--accent-color);
 }
 
-/* Адаптивная навигация и шрифты для телефонов */
-@media (max-width: 600px) {
-  .navbar a {
+/* 📱 Мобильная адаптация (до 768px) */
+@media (max-width: 768px) {
+  .navbar,
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navbar a,
+  nav a {
     flex: 1 0 100%;
     text-align: center;
     border-top: 1px solid #fdd835;
+    margin: 5px 0;
   }
 
   .site-title {
@@ -151,105 +119,14 @@ h2 {
   .site-subtitle {
     font-size: 14px;
   }
-}
 
-/* Версия для телефона (дополнительные стили) */
-body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #fff8f0;
-  color: #333;
-}
-
-/* Шапка на телефоне */
-header {
-  background-color: #ffcc00;
-  color: #000;
-  padding: 20px;
-}
-
-/* Ссылки в навигации */
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* Адаптация навигации и заголовков на планшетах и телефонах */
-@media (max-width: 768px) {
-  nav {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  .main {
+    padding: 10px;
   }
 
-  nav a {
-    margin: 5px 0;
-  }
-
-  h2 {
-    font-size: 1.5em;
-  }
-}
-
-/* Сброс отступов и градиентный фон */
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to bottom right, #ffe259, #ffa751); /* Градиентный фон */
-  color: #222;
-}
-
-/* Контейнер всего сайта */
-.container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* Основной контент между шапкой и футером */
-.main {
-  flex: 1;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 16px;
-  margin: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* Контент страницы с анимацией */
-.page-content {
-  padding: 2rem;
-  animation-timing-function: ease-out;
-}
-
-/* Повторное определение общих стилей body */
-body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(to bottom right, #ffe259, #ffa751);
-  color: #222;
-}
-
-/* Шрифт заголовка */
-.site-title {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 2.5em;
-}
-
-/* 📱 Адаптация для экранов до 768px */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+  .footer {
+    text-align: center;
+    font-size: 14px;
   }
 
   .header h1 {
@@ -261,13 +138,149 @@ body {
     font-size: 16px;
     text-align: center;
   }
+}
 
-  .main {
-    padding: 10px;
+/* 🌐 Ссылки */
+.App-link {
+  color: #61dafb;
+}
+
+/* 🔄 Анимация логотипа */
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* 📦 Единый контейнер с отступами по бокам */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0 20px; /* 🧱 Отступы по бокам */
+  box-sizing: border-box;
+}
+
+/* 🧱 Основной контент между шапкой и футером */
+.main {
+  flex: 1;
+  padding: 40px 20px; /* 🧯 Простор для контента */
+  background-color: #fff;
+  border-radius: 16px;
+  margin: 20px auto;
+  max-width: 1200px; /* 💻 Центрирование и ограничение ширины */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* 🏷 Универсальный класс секций */
+.section {
+  margin-bottom: 40px;
+  padding: 20px;
+}
+
+/* 📌 Заголовки — выравнивание и отступы */
+h1, h2, h3 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* 🧍 Абзацы — читаемость */
+p {
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-size: 1rem;
+  color: #222;
+}
+/* 🎨 Фон секции по умолчанию */
+.section {
+  background-color: #fffef6;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+}
+
+/* 🖼 Секции с акцентом (например, Контакты или Вакансии) */
+.section-accent {
+  background-color: var(--primary-color);
+  color: #000;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+/* 🧩 Кнопки */
+.button {
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background-color: #a82020; /* Тёмнее при наведении */
+}
+/* 🧠 Заголовки */
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #d32f2f;
+}
+
+/* 📝 Обычный текст */
+p, li {
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* 📱 Адаптация заголовков на телефонах */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 24px;
   }
 
-  .footer {
-    text-align: center;
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
     font-size: 14px;
+  }
+}
+
+/* 🔄 Плавные переходы */
+body, h1, h2, p, a {
+  transition: all 0.3s ease-in-out;
+}
+.page-content {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

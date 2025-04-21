@@ -1,18 +1,18 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const About = () => {
+const Government = () => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.5 }}
       className="page-content"
     >
-      <h2>Гос закупки</h2>
-      <p></p>
+      <h2>Госслужбы</h2>
+      <p>Информация о взаимодействии с государственными учреждениями и организациями.</p>
     </motion.div>
   );
 };
 
-export default About;
+export default Government;

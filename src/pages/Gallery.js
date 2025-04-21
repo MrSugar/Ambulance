@@ -1,20 +1,18 @@
 import React from "react";
+import { motion } from "framer-motion";
 
-function Gallery() {
+const Gallery = () => {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="page-content"
+    >
       <h2>Галерея</h2>
-      <p>Здесь вы можете посмотреть фотографии нашей работы, техники и команды:</p>
-
-      <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", marginTop: "16px" }}>
-        <img src="https://via.placeholder.com/200x150?text=Автомобиль+01" alt="Скорая помощь" />
-        <img src="https://via.placeholder.com/200x150?text=Бригада+на+вызове" alt="Медицинская бригада" />
-        <img src="https://via.placeholder.com/200x150?text=Оборудование" alt="Оборудование" />
-        <img src="https://via.placeholder.com/200x150?text=Учения" alt="Учения" />
-      </div>
-    </div>
+      <p>Фото и видео с мероприятий и повседневной работы скорой помощи.</p>
+    </motion.div>
   );
-}
+};
 
 export default Gallery;
-
